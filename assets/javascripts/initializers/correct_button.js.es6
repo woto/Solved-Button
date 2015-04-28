@@ -7,7 +7,7 @@ export default {
     var PostMenuView = container.lookupFactory("view:post-menu");
 
     PostMenuView.reopen({
-      shouldRerenderCorrectButton: Discourse.View.renderIfChanged("post.topic.correct_post_id"),
+      rerenderTriggers: ["post.topic.correct_post_id"],
 
       buttonForCorrect: function(post) {
         var correctPostId = post.get("topic.correct_post_id");
